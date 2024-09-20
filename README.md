@@ -166,7 +166,7 @@ pip install -r requirements.txt
 
 ```
 
-HTTP Server 　の立ち上げ ：
+### HTTP Server 　の立ち上げ ：
 
 ```
 
@@ -174,12 +174,28 @@ uvicorn webapp:app_ins --reload --host 192.168.0.23 --port 8080 --no-access-log
 
 ```
 
-web アプリ　の立ち上げ ：
+### web アプリ　の立ち上げ ：
+
+#### 仮想環境作成
+
+web 直下に移動後、以下のコマンドを実行します
 
 ```
+python -m venv venv
+```
 
+#### 仮想環境のアクティベート
+
+Linux, Mac の場合
+
+```
+. venv/bin/activate
+```
+
+Windows の場合
+
+```
 .\venv\Scripts\Activate
-
 ```
 
 ```
