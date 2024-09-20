@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Page</title>
+    <!-- JavaScriptを使用してボタンがクリックされたときにAPIを呼び出す -->
+    <script>
+        // ページ読み込み時にイベントリスナーを設定
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("apiButton_InferenceExecution").addEventListener("click", async function() {
+                const response = await fetch("/start-api", { method: "POST" });
+                const data = await response.json();
+                document.getElementById("apiResponse").innerText = JSON.stringify(data, null, 2);
+            });
+
+            document.getElementById("apiButton_InferenceStopped").addEventListener("click", async function() {
+                const response = await fetch("/stop-api", { method: "POST" });
+                const data = await response.json();
+                document.getElementById("apiResponse").innerText = JSON.stringify(data, null, 2);
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    トークン取得 : {{ token }}<br />
+    <!-- API呼び出しボタン -->
+    <button id="apiButton_InferenceExecution">推論実行</button>
+    <br/>
+    <br/>
+    <button id="apiButton_InferenceStopped">推論停止</button>
+
+    <!-- API呼び出し結果を表示する場所 -->
+    <p id="apiResponse"></p>
+
+</body>
+</html>
