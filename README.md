@@ -198,6 +198,10 @@ Windows の場合
 .\venv\Scripts\Activate
 ```
 
+#### web アプリの立ち上げ
+
+上記の仮想環境がアクティベートになってから下記を実行
+
 ```
 
 uvicorn "app:app --reload --port 8000"
