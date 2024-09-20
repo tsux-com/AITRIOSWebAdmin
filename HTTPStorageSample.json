@@ -1,0 +1,31 @@
+{
+    "commands": [
+      {
+        "command_name": "StartUploadInferenceData",
+        "parameters": {
+          "Mode": 1,
+          "UploadMethod": "HTTPStorage",
+          "StorageName": "ここに実際のIPアドレス (例: "192.168.x.x") を入力",
+          "StorageSubDirectoryPath": "/image",
+          "FileFormat": "JPG",
+          "UploadMethodIR": "HTTPStorage",
+          "StorageNameIR": "ここに実際のIPアドレス (例: "192.168.x.x") を入力",
+          "StorageSubDirectoryPathIR": "/meta",
+          "PPLParameter": {
+            "header" :{
+                "id" : "00",
+                "version" : "01.01.00"
+            },
+            "dnn_output_detections" : 64,
+            "max_detections" : 1,
+            "threshold" : 0.3,
+            "input_width" : 320,
+            "input_height" : 320
+          },
+          "NumberOfImages": 0,
+          "UploadInterval": 30,
+          "NumberOfInferencesPerMessage": 1
+        }
+      }
+    ]
+}  
