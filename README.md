@@ -225,6 +225,18 @@ uvicorn app:app --reload --port 8000
 
 ### 実行コマンド
 
+#### 1. ビルド（build）
+
+イメージをビルドするコマンドです。
+
 ```
-docker-compose up --build
+docker-compose build
+```
+
+#### 2. 起動（up）
+
+イメージのビルドが完了したら、up コマンドでコンテナを起動します。
+
+```
+docker-compose up
 ```
