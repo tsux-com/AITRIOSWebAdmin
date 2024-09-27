@@ -1,0 +1,21 @@
+version: '3'
+services:
+  server:
+    build: ./server
+    container_name: server_app_container
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./server:/app
+    depends_on:
+      - web
+
+  web:
+    build: ./web
+    container_name: web_app_container
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./web:/app
+    env_file:
+      - .env

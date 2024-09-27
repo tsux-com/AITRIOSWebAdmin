@@ -18,11 +18,15 @@ WEB アプリ　管理画面を介して外部 API を呼び出し、デバイ�
         - service.py
     - templates/
         - index.html
+    - Dockerfile
 - server/
     - webapp.py
     - image/
     - meta/
+    - Dockerfile
 - .env
+- docker-compose.yml
+
 ```
 
 ---
@@ -206,4 +210,21 @@ Windows の場合
 
 uvicorn app:app --reload --port 8000
 
+```
+
+---
+
+## Docker 実行
+
+上記の Python を実行するのではなく Docker 上で起動することが可能です
+
+プロジェクトのルートディレクトリ（web/server の両方があり docker-compose.yml
+がある場所）で以下のコマンドを実行して、コンテナをビルド・起動します
+
+両方のコンテナ（server と web）をまとめて管理しており、両方が起動します。
+
+### 実行コマンド
+
+```
+docker-compose up --build
 ```
