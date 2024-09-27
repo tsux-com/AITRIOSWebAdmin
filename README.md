@@ -225,6 +225,19 @@ uvicorn app:app --reload --port 8000
 
 ### 実行コマンド
 
+#### 1.ビルド（build）
+
+まず、イメージをビルドするコマンドです。--no-cache オプションを使うと、
+キャッシュを無視して常に新しいビルドを行います。
+
 ```
-docker-compose up --build
+docker-compose build
+```
+
+#### 2. 起動（up）
+
+イメージのビルドが完了したら、up コマンドでコンテナを起動します。
+
+```
+docker-compose build
 ```
