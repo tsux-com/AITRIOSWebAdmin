@@ -1,7 +1,10 @@
+import os
 import requests # type: ignore
+from dotenv import load_dotenv
 
 def post_collectstart_to_api(token):
-    url = "https://console.aitrios.sony-semicon.com/api/v1/devices/Aid-80070001-0000-2000-9002-000000000b6b/inferenceresults/collectstart"
+    device_id = os.getenv('DEVICE_ID')
+    url = f"https://console.aitrios.sony-semicon.com/api/v1/devices/{device_id}/inferenceresults/collectstart"
     
     # 認証のためのヘッダー
     headers = {
@@ -31,7 +34,8 @@ def post_collectstart_to_api(token):
         return {"error": f"Request failed: {e}"}
 
 def post_collectstop_to_api(token):
-    url = "https://console.aitrios.sony-semicon.com/api/v1/devices/Aid-80070001-0000-2000-9002-000000000b6b/inferenceresults/collectstop"
+    device_id = os.getenv('DEVICE_ID')
+    url = f"https://console.aitrios.sony-semicon.com/api/v1/devices/{device_id}/inferenceresults/collectstop"
     
     # 認証のためのヘッダー
     headers = {
